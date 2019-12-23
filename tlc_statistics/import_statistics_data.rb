@@ -55,3 +55,6 @@ end
 system(%{psql nyc-taxi-data -f create_statistics_tables.sql})
 system(%{sort -u tlc_monthly_data.csv | psql nyc-taxi-data -c "COPY tlc_monthly_reports FROM stdin CSV;"})
 system(%{cat fhv_monthly_data.csv | psql nyc-taxi-data -c "COPY fhv_monthly_reports FROM stdin CSV;"})
+
+# make base numbers consistent with fhv_bases table
+system(%{psql nyc-taxi-data -c "UPDATE fhv_monthly_reports SET base_number = UPPER(base_number);"})

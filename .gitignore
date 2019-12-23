@@ -1,10 +1,28 @@
+# junk files
 .Rapp.history
 .DS_Store
 ggmapTemp.png
+*.Rhistory
+*.log
+*.ipynb
+**/.ipynb_checkpoints/
+
+# data
 data/fhv_tripdata*.csv
-data/fhvhv_tripdata*.csv
 data/green_tripdata*.csv
 data/yellow_tripdata*.csv
 data/uber-raw-data*.csv
 data/unaltered/*.csv
 tlc_statistics/*.csv
+
+**/data/
+**/data/asos_data.csv
+sub/data/asos_data.csv
+**/data/geocoded_stations.csv
+**/data/stations_old.csv
+**/stations/**
+
+**/tables/
+
+# virtual env
+nyc-taxi-env
