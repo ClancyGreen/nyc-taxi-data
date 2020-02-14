@@ -51,6 +51,7 @@ for filename in data/green_tripdata*.csv; do
   echo "`date`: finished raw load for ${filename}"
   psql nyc-taxi-data -f setup_files/populate_green_trips.sql
   echo "`date`: loaded trips for ${filename}"
+  rm ${filename}
 done;
 
 for filename in data/yellow_tripdata*.csv; do
@@ -75,6 +76,7 @@ for filename in data/yellow_tripdata*.csv; do
   echo "`date`: finished raw load for ${filename}"
   psql nyc-taxi-data -f setup_files/populate_yellow_trips.sql
   echo "`date`: loaded trips for ${filename}"
+  rm ${filename}
 done;
 
 psql nyc-taxi-data -c "CREATE INDEX ON trips USING BRIN (pickup_datetime) WITH (pages_per_range = 32);"
