@@ -22,6 +22,8 @@ Both are available via [Homebrew](https://brew.sh/) on Mac
 
 ##### 2. Download raw data
 
+Copy `example_config.sh` to `config.sh` and update `TMP_DATA` to where you want the raw data downloaded (in case the repo is not on a disk with enough space). Then:
+
 `./download_raw_data.sh && ./remove_bad_rows.sh`
 
 The `remove_bad_rows.sh` script fixes two particular files that have a few rows with too many columns. See the "data issues" section below for more.
