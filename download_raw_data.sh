@@ -1,7 +1,7 @@
 . config.sh
 
 
-for type in "${types[@]}"; do
+for type in "${TYPES[@]}"; do
   for (( year=$START; year<=$END; year++ )); do 
     cat setup_files/raw_data_urls.txt | \
         grep $type | \
